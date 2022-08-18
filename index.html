@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/de08256965.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>css Animation</title>
+</head>
+<body>
+  <!-- page 1 (intro)-->
+  <section id="page-1" class="page">
+    <h1>Ohh my days</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit laboriosam officiis doloremque, est, incidunt in sequi necessitatibus aliquam minima saepe earum explicabo odio nulla blanditiis quae? Aperiam eos quas distinctio. Voluptas fuga placeat temporibus perspiciatis architecto. Deleniti aperiam adipisci obcaecati!</p>
+    <div>
+      <a href="#page-2" class="btn"> Next Page <i class="fa-solid fa-circle-arrow-down"></i></a>
+    </div>
+  </section>
+   
+  <!-- page 2 -->
+  <section id="page-2" class="page">
+    <h1>Come on</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit laboriosam officiis doloremque, est, incidunt in sequi necessitatibus aliquam minima saepe earum explicabo odio nulla blanditiis quae? Aperiam eos quas distinctio. Voluptas fuga placeat temporibus perspiciatis architecto. Deleniti aperiam adipisci obcaecati!</p>
+    <div>
+      <a href="#page-1" class="btn btn-dark"> Prev Page <i class="fa-solid fa-circle-arrow-up"></i></a>
+      <a href="#page-3" class="btn"> Next Page <i class="fa-solid fa-circle-arrow-down"></i></a>
+    </div>
+  </section>
+
+  <!-- page 3 -->
+ <section id="page-3" class="page">
+    <h1>Allow it</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit laboriosam officiis doloremque, est, incidunt in sequi necessitatibus aliquam minima saepe earum explicabo odio nulla blanditiis quae? Aperiam eos quas distinctio. Voluptas fuga placeat temporibus perspiciatis architecto. Deleniti aperiam adipisci obcaecati!</p>
+    <div>
+      <a href="#page-2" class="btn btn-dark"> Prev Page <i class="fa-solid fa-circle-arrow-up"></i></a>
+      <a href="#page-4" class="btn"> Next Page <i class="fa-solid fa-circle-arrow-down"></i></a>
+    </div>
+  </section>
+
+  <!-- page 4 -->
+  <section id="page-4" class="page">
+    <h1>Bottle of water</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit laboriosam officiis doloremque, est, incidunt in sequi necessitatibus aliquam minima saepe earum explicabo odio nulla blanditiis quae? Aperiam eos quas distinctio. Voluptas fuga placeat temporibus perspiciatis architecto. Deleniti aperiam adipisci obcaecati!</p>
+    <div>
+      <a href="#page-3" class="btn btn-dark"> Prev Page <i class="fa-solid fa-circle-arrow-up"></i></a>
+      
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(' .btn').on('click', function(event){
+  if (this.hash !=='') {
+    event.preventDefault();
+
+    const hash = this.hash;
+
+    $('html, body').animate(
+      {
+        scrollTop: $(hash).offset().top 
+      },
+      800
+    );
+  }
+});
+  </script>
+ 
+</body>
+</html>
