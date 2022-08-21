@@ -9,6 +9,25 @@
   <title>css Animation</title>
 </head>
 <body>
+  <!--Menu-->
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu-content">
+      <div>
+        <div>
+          <ul>
+            <li> <a href="#page-1" class="m-btn">page 1</a> </li>
+            <li> <a href="#page-2" class="m-btn">page 2</a>  </li>
+            <li><a href="#page-3" class="m-btn">page 3</a>  </li>
+            <li> <a href="#page-4" class="m-btn">page 4 </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- page 1 (intro)-->
   <section id="page-1" class="page">
     <h1>Ohh my days</h1>
@@ -50,7 +69,7 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
-    $(' .btn').on('click', function(event){
+    $('.m-btn, .btn').on('click', function(event){
   if (this.hash !=='') {
     event.preventDefault();
 

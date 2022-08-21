@@ -117,3 +117,157 @@ p{
   font-size: 4rem;
 }
 
+/* toggle-menu-bar*/
+
+.menu-wrap{
+  position: fixed;
+  z-index: 1;
+}
+
+.toggler{
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  position: fixed;
+}
+
+.hamburger{
+  height: 60px;
+  width: 60px;
+  background: rgba(229, 33, 101, );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger > div{
+  background: white;
+  flex: none;
+  position: relative;
+  height: 2px;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.hamburger > div::before,
+.hamburger > div::after{
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: -10px;
+  background-color: inherit;
+  
+}
+
+.hamburger > div::after{
+  top: 10px;
+}
+
+.menu-wrap .toggler:checked + .hamburger > div{
+  transform: rotate(135deg);
+}
+
+.menu-wrap .toggler:checked ~ .hamburger > div::before,
+.menu-wrap .toggler:checked ~ .hamburger > div::after{
+  transform: rotate(90deg);
+  top: 0;
+}
+
+.menu-wrap .toggler:checked:hover+ .hamburger > div{
+  transform: rotate(225deg);
+}
+
+.menu-wrap .menu-content{
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transition: all 0.4s ease;
+} 
+
+.menu-wrap .menu-content > div{
+  background: rgba(13, 17, 55, 0.7);
+  height: 200vw;
+  width: 200vw;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+
+.menu-wrap .menu-content > div > div{
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.8s ease ;
+}
+
+.menu-wrap .menu-content > div > div ul{
+  list-style: none;
+  line-height: 1.4;
+}
+
+.menu-wrap .menu-content > div > div ul li{
+  margin-top: 1rem;
+}
+
+.menu-wrap .menu-content > div > div ul a{
+  color:white;
+  text-decoration: none;
+  font-size: 1.4rem;
+ 
+}
+
+.menu-wrap .menu-content > div > div ul a:hover{
+  color: var(--secondary-2-color);
+  font-size: 1.8rem;
+
+}
+
+.menu-wrap .toggler:checked ~ .menu-content{
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu-content > div {
+  transform: scale(1);
+}
+
+.menu-wrap .toggler:checked ~ .menu-content > div > div{
+  opacity: 1;
+}
+
+
+@media(max-width:768px){
+
+  .page ~ div{
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .btn-dark{
+    display: block;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .menu-wrap .menu-content > div{
+    height: 300vw;
+    width: 300vw;
+  }
+}
